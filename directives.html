@@ -4,9 +4,9 @@
 		<script type="text/javascript" src='app.js'></script>
 	</head>
 	<body ng-app="app" ng-controller="directives as directives">
-		<p>{{directives.client.name}}</p>
-		<button ng-show="directives.client.can">Add</button>
-		<p>{{directives.customer.name}}</p>
-		<button ng-show="directives.customer.can">Add</button>
+		<div ng-repeat="client in directives.clients">
+			<p>{{client.name}}</p>
+			<button ng-show="client.can">Add</button>
+		</div>
 	</body>
 </html>

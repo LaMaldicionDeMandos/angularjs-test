@@ -4,7 +4,6 @@
 		this.helloWorld = "Hello World!!";
 	});
 	app.controller('directives', function() {
-		this.client = {name: "marcelo", can:true};
-		this.customer = {name: "aida", can:false};
+		this.clients = [{name: "marcelo", can:true}, {name: "aida", can:false}];
 	})
 })();
