@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<script type="text/javascript" src='angular.js'></script>
+		<script type="text/javascript" src='app.js'></script>
+	</head>
+	<h1>Repeat</h1>
+	<body ng-app="app" ng-controller="directives as directives">
+		<h1>Repeat</h1>
+		<div ng-repeat="client in directives.clients">
+			<p>{{client.name}} {{client.price | currency}}</p>
+			<button ng-show="client.can">Add</button>
+		</div>
+		<h1>
+	</body>
+</html>
