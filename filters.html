@@ -6,6 +6,14 @@
 	<body ng-app="app" ng-controller="directives as directives">
 		<h1>Repeat</h1>
 		<div ng-repeat="client in directives.clients">
+			<!-- Hay otros filtros tambien ademas de currency, y se pueden hacer nuevos -->
+			<!-- La sintaxis es {{data | filter:options}} -->
+			<!-- Por ejemplo {{data | date:'dd/MM/yyyy'}} -->
+			<!-- Otros ejemplos
+			{{'bla bla' | uppercase}}
+			{{'texto' | limitTo:2}}
+			<li ng-repear="product in products | limitTo:3" >
+			 <li ng-repear="product in products | orderBy:'-price'" -->
 			<h4>Cuando hay un "|" significa que paso lo de la izquierda por la derecha</h4>
 			<p>{{client.name}} {{client.price | currency}}</p>
 			<button ng-show="client.can">Add</button>
