@@ -16,6 +16,7 @@
 			 <li ng-repear="product in products | orderBy:'-price'" -->
 			<h4>Cuando hay un "|" significa que paso lo de la izquierda por la derecha</h4>
 			<p>{{client.name}} {{client.price | currency}}</p>
+			<img ng-src="{{client.image}}" />
 			<button ng-show="client.can">Add</button>
 		</div>
 		<h1>
