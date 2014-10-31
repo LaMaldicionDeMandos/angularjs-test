@@ -11,12 +11,8 @@
 				<p>{{review.body}}</p>
 				<cite>by: {{review.author}}</cite>
 			</blockquote>
-			<select ng-model="review.stars">
-				<option value=1>1 star</option>
-				<option value=2>2 stars</option>
-				<option value=3>3 stars</option>
-				<option value=4>4 stars</option>
-				<option value=5>5 stars</option>
+			<select ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]">
+				<option value="">Selecciones las estrellas</option>
 			</select>
 			<br/>
 			<textarea ng-model="review.body"></textarea>
