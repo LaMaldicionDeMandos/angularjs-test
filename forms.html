@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script type="text/javascript" src='angular.js'></script>
+		<script type="text/javascript" src='app.js'></script>
+	</head>
+	<body ng-app="app">
+		<form name="theForm">
+			<blockquote>
+				<b>Stars: {{review.stars}}
+				<br/>	
+				<p>{{review.body}}</p>
+				<cite>by: {{review.author}}</cite>
+			</blockquote>
+			<select ng-model="review.stars">
+				<option value=1>1 star</option>
+				<option value=2>2 stars</option>
+				<option value=3>3 stars</option>
+				<option value=4>4 stars</option>
+				<option value=5>5 stars</option>
+			</select>
+			<br/>
+			<textarea ng-model="review.body"></textarea>
+			<br/>
+			<label>by:</label>
+			<input ng-model="review.author" type="email" />
+			<br/>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
