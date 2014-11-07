@@ -4,7 +4,8 @@
 		<script type="text/javascript" src='app.js'></script>
 	</head>
 	<body ng-app="app">
-		<form name="theForm" ng-controller="ReviewController as controller">
+		<!-- El ng-submit te deja ejecutar una funcion -->
+		<form name="theForm" ng-controller="ReviewController as controller" ng-submit="controller.addReview(product)">
 			<blockquote>
 				<b>Stars: {{controller.review.stars}}
 				<br/>	
