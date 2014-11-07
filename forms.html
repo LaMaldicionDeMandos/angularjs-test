@@ -2,6 +2,7 @@
 	<head>
 		<script type="text/javascript" src='angular.js'></script>
 		<script type="text/javascript" src='app.js'></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body ng-app="app" ng-controller="directives as directives">
 		<!-- El ng-submit te deja ejecutar una funcion -->
@@ -16,7 +17,7 @@
 					<p>{{review.name}}</p>
 				</blockquote>
 			</div>
-			<form name="theForm" ng-controller="ReviewController as controller" ng-submit="controller.addReview(client)">
+			<form name="theForm" ng-controller="ReviewController as controller" ng-submit="theForm.$valid && controller.addReview(client)">
 				<blockquote>
 					<b>Stars: {{controller.review.stars}}
 					<br/>	
@@ -28,6 +29,7 @@
 				<br/>
 				<textarea ng-model="controller.review.name" required></textarea>
 				<br/>
+				El formulario es valido {{theForm.$valid}}
 				<input type="submit" value="Submit">
 			</form>
 		</div>
