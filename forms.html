@@ -4,21 +4,21 @@
 		<script type="text/javascript" src='app.js'></script>
 	</head>
 	<body ng-app="app">
-		<form name="theForm">
+		<form name="theForm" ng-controller="ReviewController as controller">
 			<blockquote>
-				<b>Stars: {{review.stars}}
+				<b>Stars: {{controller.review.stars}}
 				<br/>	
-				<p>{{review.body}}</p>
-				<cite>by: {{review.author}}</cite>
+				<p>{{controller.review.body}}</p>
+				<cite>by: {{controller.review.author}}</cite>
 			</blockquote>
-			<select ng-model="review.stars" ng-options="stars for stars in [5,4,3,2,1]">
+			<select ng-model="controller.review.stars" ng-options="stars for stars in [5,4,3,2,1]">
 				<option value="">Selecciones las estrellas</option>
 			</select>
 			<br/>
-			<textarea ng-model="review.body"></textarea>
+			<textarea ng-model="controller.review.body"></textarea>
 			<br/>
 			<label>by:</label>
-			<input ng-model="review.author" type="email" />
+			<input ng-model="controller.review.author" type="email" />
 			<br/>
 			<input type="submit" value="Submit">
 		</form>
