@@ -3,25 +3,33 @@
 		<script type="text/javascript" src='angular.js'></script>
 		<script type="text/javascript" src='app.js'></script>
 	</head>
-	<body ng-app="app">
+	<body ng-app="app" ng-controller="directives as directives">
 		<!-- El ng-submit te deja ejecutar una funcion -->
-		<form name="theForm" ng-controller="ReviewController as controller" ng-submit="controller.addReview(product)">
-			<blockquote>
-				<b>Stars: {{controller.review.stars}}
-				<br/>	
-				<p>{{controller.review.body}}</p>
-				<cite>by: {{controller.review.author}}</cite>
-			</blockquote>
-			<select ng-model="controller.review.stars" ng-options="stars for stars in [5,4,3,2,1]">
-				<option value="">Selecciones las estrellas</option>
-			</select>
-			<br/>
-			<textarea ng-model="controller.review.body"></textarea>
-			<br/>
-			<label>by:</label>
-			<input ng-model="controller.review.author" type="email" />
-			<br/>
-			<input type="submit" value="Submit">
-		</form>
+		<div ng-repeat="client in directives.clients">
+			<p>{{client.name}}</p>
+			<img ng-src="{{client.image}}" />
+			<button ng-show="client.can">Add</button>
+			<div ng-repeat="review in client.reviews">
+				<blockquote>
+					<b>Stars: {{review.stars}}
+					<br/>	
+					<p>{{review.name}}</p>
+				</blockquote>
+			</div>
+			<form name="theForm" ng-controller="ReviewController as controller" ng-submit="controller.addReview(client)">
+				<blockquote>
+					<b>Stars: {{controller.review.stars}}
+					<br/>	
+					<p>{{controller.review.name}}</p>
+				</blockquote>
+				<select ng-model="controller.review.stars" ng-options="stars for stars in [5,4,3,2,1]">
+					<option value="">Selecciones las estrellas</option>
+				</select>
+				<br/>
+				<textarea ng-model="controller.review.name"></textarea>
+				<br/>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
 	</body>
 </html>
